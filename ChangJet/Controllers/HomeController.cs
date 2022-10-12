@@ -15,10 +15,10 @@ namespace ChangJet.Controllers
     {
         // 请求地址
         private const string BASE_URL = "https://openapi.chanjet.com";
-        private const string App_Key = "P6oQEJAt";
-        private const string App_Secret = "C30897064C171395270979EB2FB8DF82";
-        private const string user_auth_permanent_code = "up-bc698bb078984eb3aad656b83b14c926"; // 用户永久授权码
-        private const string permanentAuthCode = "op-5db38824adb94a0c854f2b9908f4815e"; // 企业永久授权码
+        private const string App_Key = "";
+        private const string App_Secret = "";
+        private const string user_auth_permanent_code = ""; // 用户永久授权码
+        private const string permanentAuthCode = ""; // 企业永久授权码
 
         /// <summary>
         /// 使用用户永久授权码获取token
