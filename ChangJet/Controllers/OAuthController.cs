@@ -13,7 +13,7 @@ namespace ChangJet.Controllers
 {
     public class OAuthController : ApiController
     {
-        private const string encryption_key = "5fa057f2734a418a";   // 密钥
+        private const string encryption_key = "";   // 密钥
         private const string app_ticket = "APP_TICKET"; // 消息类型为APP_TICKET
 
         /// <summary>
