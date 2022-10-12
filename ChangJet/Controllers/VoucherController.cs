@@ -16,8 +16,8 @@ namespace ChangJet.Controllers
     {
         // 请求地址
         private const string BASE_URL = "https://openapi.chanjet.com";
-        private const string App_Key = "P6oQEJAt";
-        private const string App_Secret = "C30897064C171395270979EB2FB8DF82";
+        private const string App_Key = "";
+        private const string App_Secret = "";
         private static string openToken = ""; // 开放平台token
 
         /// <summary>
@@ -142,124 +142,6 @@ namespace ChangJet.Controllers
                 };
             }
         }
-
-        [HttpGet]
-        public HttpResponseMessage VoucherOperation()
-        {
-            #region 返回结果参数
-            List<BizStructure> listData = new List<BizStructure>();
-            BizStructureSchema msgSchema1 = new BizStructureSchema();
-            BizStructure returnBizStructure = null;
-            string bResult = "false";
-            #endregion
-
-            string jsonparam = "{\"openToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpc3YiLCJpc3MiOiJjaGFuamV0IiwidXNlcklkIjoiNjAwMDU5NjQzMTkiLCJvcmdJZCI6IjkwMDExNjg5NjExIiwiYWNjZXNzX3Rva2VuIjoiZmQyZTRmM2MtNTkyNC00NDk0LTk2YzAtMTE3MGRiMDdhYWNiIiwiYXVkIjoiaXN2IiwibmJmIjoxNjU3MTc1NzI0LCJhcHBJZCI6IjU5Iiwic2NvcGUiOiJhdXRoX2FsbCIsImlkIjoiODI1ODlkNjctYmY2Mi00MWFkLWFkYTctMTQxYmY1YzQ4OTQxIiwiZXhwIjoxNjU3Njk0MTI0LCJpYXQiOjE2NTcxNzU3MjQsIm9yZ0FjY291bnQiOiJ1NXgyenlmZnZ6bGEifQ.9FUh828lRosBOsJ0tcyfkTqmzmUsLNJduVuU2tOU2tE\",\"methodName\":\"Add\",\"VoucherCollection\":\"[{\\\"ObjectId\\\":\\\"d86d0d36-7b4c-40e5-b7bd-219e78350780\\\",\\\"methodName\\\":null,\\\"openToken\\\":null,\\\"acctgTransCategoryId\\\":100001,\\\"acctgPeriod\\\":\\\"202207\\\",\\\"bizTypeId\\\":100501,\\\"code\\\":\\\"001\\\",\\\"boName\\\":\\\"AcctgTrans\\\",\\\"bizDate\\\":1657123200000,\\\"isCodeType\\\":true,\\\"details\\\":[{\\\"comments\\\":\\\"付：钟益君；ABC银行（好会计测试）\\\",\\\"postedDrQty\\\":100,\\\"postedCrQty\\\":0,\\\"sequenceNum\\\":1,\\\"postedDr\\\":0.0,\\\"postedCr\\\":0.0,\\\"basePostedDr\\\":100.0,\\\"basePostedCr\\\":0.0,\\\"price\\\":100.0,\\\"glSubAccount\\\":{\\\"productCode\\\":\\\"\\\",\\\"projectCode\\\":\\\"\\\",\\\"departmentCode\\\":\\\"\\\",\\\"customerCode\\\":\\\"\\\",\\\"employeeCode\\\":\\\"0\\\",\\\"vendorCode\\\":\\\"\\\"},\\\"glAccount\\\":{\\\"code\\\":\\\"510299\\\",\\\"drCrDirection\\\":1,\\\"hasSubsidiaryAccounting\\\":true,\\\"isLeafNode\\\":true}},{\\\"comments\\\":\\\"付：钟益君；ABC银行（好会计测试）\\\",\\\"postedDrQty\\\":0,\\\"postedCrQty\\\":100,\\\"sequenceNum\\\":1,\\\"postedDr\\\":0.0,\\\"postedCr\\\":0.0,\\\"basePostedDr\\\":0.0,\\\"basePostedCr\\\":100.0,\\\"price\\\":100.0,\\\"glSubAccount\\\":{\\\"productCode\\\":\\\"\\\",\\\"projectCode\\\":\\\"\\\",\\\"departmentCode\\\":\\\"\\\",\\\"customerCode\\\":\\\"\\\",\\\"employeeCode\\\":\\\"\\\",\\\"vendorCode\\\":\\\"\\\"},\\\"glAccount\\\":{\\\"code\\\":\\\"1622\\\",\\\"drCrDirection\\\":-1,\\\"hasSubsidiaryAccounting\\\":false,\\\"isLeafNode\\\":true}}],\\\"categoryCodeExist\\\":true,\\\"isFinal\\\":false,\\\"origCreatedUserName\\\":\\\"钟益君\\\"},{\\\"ObjectId\\\":\\\"d2190ec7-d7d7-4a05-b58a-fdfae1ba5716\\\",\\\"methodName\\\":null,\\\"openToken\\\":null,\\\"acctgTransCategoryId\\\":100001,\\\"acctgPeriod\\\":\\\"202207\\\",\\\"bizTypeId\\\":100501,\\\"code\\\":\\\"001\\\",\\\"boName\\\":\\\"AcctgTrans\\\",\\\"bizDate\\\":1657123200000,\\\"isCodeType\\\":true,\\\"details\\\":[{\\\"comments\\\":\\\"付：钟益君；ABC银行（好会计测试）\\\",\\\"postedDrQty\\\":100,\\\"postedCrQty\\\":0,\\\"sequenceNum\\\":1,\\\"postedDr\\\":0.0,\\\"postedCr\\\":0.0,\\\"basePostedDr\\\":100.0,\\\"basePostedCr\\\":0.0,\\\"price\\\":100.0,\\\"glSubAccount\\\":{\\\"productCode\\\":\\\"\\\",\\\"projectCode\\\":\\\"\\\",\\\"departmentCode\\\":\\\"\\\",\\\"customerCode\\\":\\\"\\\",\\\"employeeCode\\\":\\\"0\\\",\\\"vendorCode\\\":\\\"\\\"},\\\"glAccount\\\":{\\\"code\\\":\\\"560104\\\",\\\"drCrDirection\\\":1,\\\"hasSubsidiaryAccounting\\\":true,\\\"isLeafNode\\\":true}},{\\\"comments\\\":\\\"付：钟益君；ABC银行（好会计测试）\\\",\\\"postedDrQty\\\":0,\\\"postedCrQty\\\":100,\\\"sequenceNum\\\":1,\\\"postedDr\\\":0.0,\\\"postedCr\\\":0.0,\\\"basePostedDr\\\":0.0,\\\"basePostedCr\\\":100.0,\\\"price\\\":100.0,\\\"glSubAccount\\\":{\\\"productCode\\\":\\\"\\\",\\\"projectCode\\\":\\\"\\\",\\\"departmentCode\\\":\\\"\\\",\\\"customerCode\\\":\\\"\\\",\\\"employeeCode\\\":\\\"\\\",\\\"vendorCode\\\":\\\"\\\"},\\\"glAccount\\\":{\\\"code\\\":\\\"1622\\\",\\\"drCrDirection\\\":-1,\\\"hasSubsidiaryAccounting\\\":false,\\\"isLeafNode\\\":true}}],\\\"categoryCodeExist\\\":true,\\\"isFinal\\\":false,\\\"origCreatedUserName\\\":\\\"钟益君\\\"}]\"}";
-
-            try
-            {
-                BizStructureSchema msgSchema = new BizStructureSchema();
-                msgSchema.Add(new ItemSchema("ObjectId", "氚云表单数据ID", BizDataType.String, 100, ""));
-                msgSchema.Add(new ItemSchema("VoucherId", "生成的凭证ID", BizDataType.String, 100, ""));
-
-
-                if (!String.IsNullOrWhiteSpace(jsonparam))
-                {
-
-                    Dictionary<string, object> dic_schema_id = new Dictionary<string, object>();    // key:氚云表单数据ID  Value:生成的凭证ID
-                    Dictionary<string, object> dicParam = JsonConvert.DeserializeObject<Dictionary<string, object>>(jsonparam);
-                    openToken = dicParam["openToken"] + string.Empty;  // token
-                    // 新增凭证
-                    if (dicParam["methodName"] + string.Empty == "Add")
-                    {
-
-                        int i = 0;
-                        string strResult = string.Empty;
-                        List<VoucherModel> voucher = JsonConvert.DeserializeObject<List<VoucherModel>>(dicParam["VoucherCollection"] + string.Empty);
-                        List<H3Yun> list_ObjectId = JsonConvert.DeserializeObject<List<H3Yun>>(dicParam["VoucherCollection"] + string.Empty);
-                        foreach (VoucherModel item in voucher)
-                        {
-                            strResult = AddVoucher_glAccount("1870244219322369", JsonConvert.SerializeObject(item));
-                            // 返回结果
-                            Dictionary<string, object> dicJsonData = JsonConvert.DeserializeObject<Dictionary<string, object>>(strResult);
-                            if (dicJsonData.ContainsKey("id"))
-                            {
-                                msgSchema1.Code = "0";
-                                dic_schema_id.Add(list_ObjectId[i].ObjectId, dicJsonData["id"] + string.Empty);
-                                i++;
-                            }
-                            else
-                            {
-                                throw new Exception($"{ dicJsonData["msg"] + string.Empty}");
-                            }
-                        }
-
-                        if (dic_schema_id.Count > 0 && msgSchema1.Code == "0")
-                        {
-                            foreach (string ObjectId in dic_schema_id.Keys)
-                            {
-                                BizStructure Straaucture = new BizStructure(msgSchema);
-                                Straaucture["ObjectId"] = ObjectId;
-                                Straaucture["VoucherId"] = dic_schema_id[ObjectId] + string.Empty;
-                                listData.Add(Straaucture);
-                            }
-                        }
-
-                    }
-                    //凭证作废
-                    if (dicParam["methodName"] + string.Empty == "Del")
-                    {
-                        msgSchema1.Code = "0";
-                        string strJsonData = DelVoucher(long.Parse(dicParam["acctgTransId"] + string.Empty), "1870244219322369");
-                    }
-                    bResult = "true";
-                }
-
-                #region 返回Schem
-                msgSchema1.Add(new ItemSchema("Result", "返回值", BizDataType.String, 100, ""));
-                msgSchema1.Add(new ItemSchema("Msg", "返回信息", BizDataType.String, 100, ""));
-                msgSchema1.Add(new ItemSchema("ReturnData", "返回数据", BizDataType.BizStructureArray, int.MaxValue, msgSchema));
-                returnBizStructure = new BizStructure(msgSchema1);
-
-                returnBizStructure["Result"] = bResult;
-                returnBizStructure["Msg"] = "服务器返回成功";
-                returnBizStructure["ReturnData"] = listData.ToArray();
-                InvokeResult Returnresult = new InvokeResult(0, "服务器返回成功", returnBizStructure);
-                #endregion
-
-                return new HttpResponseMessage
-                {
-                    Content = new StringContent(
-                    BizStructureUtility.InvokeResultToJson(Returnresult),
-                    System.Text.Encoding.UTF8,
-                    "application/x-www-form-urlencoded")
-                };
-            }
-            catch (Exception e)
-            {
-                MessageHelper.CreateErrLog(e.Message);
-                #region 返回Schem
-                msgSchema1.Code = "1";
-                msgSchema1.Add(new ItemSchema("Result", "返回值", BizDataType.String, 100, ""));
-                msgSchema1.Add(new ItemSchema("Msg", "返回信息", BizDataType.String, 100, ""));
-                msgSchema1.Add(new ItemSchema("ReturnData", "返回数据", BizDataType.BizStructureArray, 100, ""));
-                returnBizStructure = new BizStructure(msgSchema1);
-
-                returnBizStructure["Result"] = false;
-                returnBizStructure["Msg"] = e.Message;
-                returnBizStructure["ReturnData"] = null;
-                InvokeResult Returnresult = new InvokeResult(0, "", returnBizStructure);
-                #endregion
-                return new HttpResponseMessage
-                {
-                    Content = new StringContent(
-                    BizStructureUtility.InvokeResultToJson(Returnresult),
-                    System.Text.Encoding.UTF8,
-                    "application/x-www-form-urlencoded")
-                };
-            }
-
-        }
-
 
         /// <summary>
         /// 新增凭证（科目存在辅助核算场景）
